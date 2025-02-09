@@ -1,3 +1,14 @@
+/* 
+BT1. Viết một chương trình mở một file bất kì và sử dụng cờ O_APPEND, 
+sau đó thực hiện seek về đầu file rồi ghi một vài dữ  liệu vào file đó. 
+Dữ liệu sẽ xuất hiện ở vị trí nào của file và tại sao lại như vậy?
+==> Answer: Dữ liệu file được ghi sẽ xuất hiện ở cuối file, bởi vì khi set 
+cờ O_APPEND sẽ luôn luôn trỏ tới cuối file bất kể đã dùng function lseek(SEEK_SET).
+ */
+ /* ------------------------------ */
+// Run: ./BT1_execute 
+ /* ---------------------------------- */
+
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>

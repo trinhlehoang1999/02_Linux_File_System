@@ -1,3 +1,19 @@
+/* BT3. Viết một chương trình có só lượng command-line arguments là 3, có dạng như sau:
+$ ./example_program filename num-bytes [r/w] "Hello"
+Trong đó:
+	1. example_grogram: Tên file thực thi
+	2. filename: Tên file
+	3. num-bytes: Số byte muốn read/write
+	4. [r/w]: r -> Thực hiện đọc từ  filename và in ra màn hình
+		    w -> Thực hiện ghi vào filename
+	5. "Hello": Nội dung bất kì muốn read/write vào filename */
+/* -------------------------------------------------------------- */
+/* Run: 
+1) ./BT3_execute info.txt 19 w "hello hoang1801199"
+2) ./BT3_execute info.txt 19 r
+
+ */
+/* --------------------------------------------- */
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -39,7 +55,7 @@ int main(int argc, char *argv[])
             printf("could not using open() %s\n",filename);
         }
         
-        numb_write = write(fd,data, num_bytes - 1);
+        numb_write = write(fd, data, num_bytes - 1);
 
         printf("write %d bytes to %s\n",numb_write,filename);
         
